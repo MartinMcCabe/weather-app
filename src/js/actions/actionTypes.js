@@ -1,0 +1,8 @@
+export const REFRESH = 'REFRESH'
+export const IS_FETCHING = 'IS_FETCHING'
+export const IS_LOCATING = 'IS_LOCATING'
+export const RECEIVE_LOCATION = 'RECEIVE_LOCATION'
+export const LOCATION_ERROR = 'LOCATION_ERROR'
+export const FETCH_ERROR = 'FETCH_ERROR'
+export const RECEIVE_WEATHER = 'RECEIVE_WEATHER'
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'

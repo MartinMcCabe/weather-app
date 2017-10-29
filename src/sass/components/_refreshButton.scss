@@ -1,0 +1,46 @@
+.refresh-button{
+    width: 100px;
+    float: left;
+    clear: left;
+    margin-top: 40px;
+    margin-left: calc(50% - 50px);
+    cursor: pointer;
+    pointer-events: none;
+    
+    &__icon {
+        pointer-events: all;
+        margin-left: 35px;
+        width: 30px;
+        height: 30px;
+        fill: $white;
+        transition: all 0.5s;
+        opacity: 0.7;
+    }
+
+    &__label {
+        opacity: 0;
+        margin: 10px 0 0 0;
+        transition: all 0.3s;
+        font-size: 12px;
+        width: 100%;
+        text-align: center;
+
+        @include tablet {
+            opacity: 1;
+            font-size: 15px;
+            pointer-events: all;
+        }
+    }
+
+    &:hover {
+        .refresh-button__icon{
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        .refresh-button__label {
+            opacity: 0.65;
+            margin: 0;
+        }
+    }
+}

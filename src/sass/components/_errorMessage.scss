@@ -1,0 +1,10 @@
+.error-message{
+    border-radius: 20px;
+    padding: 30px;
+    background: $warn;
+
+    p{
+        text-align: center;
+        color: $red;
+    }
+}
