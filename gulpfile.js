@@ -111,7 +111,7 @@ gulp.task('default', ['sass', 'js', 'serve'], function(){
  * set NODE_ENV to production
  */
 gulp.task('apply-prod-environment', function(){
-  process.env.NODE_ENV = JSON.stringify('production');
+  process.env.NODE_ENV = 'production';
 })
 
 /**
