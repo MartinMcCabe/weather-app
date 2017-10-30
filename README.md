@@ -25,5 +25,5 @@ Some other resources I used include
 Run it yourself
 ---------------
 
-Clone this repo and run `npm  install` in your terminal. After installation, install [gulp](https://gulpjs.com/) globally by running `npm install -g gulp`. 
+Clone this repo and run `npm  install` (if you have [Node](https://nodejs.org/en/) installed) in your terminal. After installation, install [gulp](https://gulpjs.com/) globally by running `npm install -g gulp`. 
 When that's done, just run the default gulp task by typing `gulp` 
