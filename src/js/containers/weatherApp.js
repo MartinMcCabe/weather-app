@@ -71,7 +71,6 @@ class WeatherApp extends Component {
         <div className='clearfix'>
           <WeatherDisplayContainer />
           <RefreshButton onClickRefresh={this.doRefresh.bind(this)} label='Refresh'/>
-          {window.innerWidth}
         </div>
       )
     }else{
