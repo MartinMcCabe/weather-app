@@ -1,10 +1,7 @@
 $opacity: 0.7;
 
-.weather-display { 
+.weather-display {
 
-    @include mobile {
-        background: deeppink;
-    }
     &__name {
         text-align: center;
         font-size: 75px;
@@ -12,16 +9,20 @@ $opacity: 0.7;
         font-weight: normal;
 
         @include mobile {
-            font-size: 100px;
+            font-size: 130px;
         }
     }
-    
+
     &__time {
         text-align: center;
         font-size: 25px;
         text-transform: uppercase;
         margin: 0 0 15px 0;
         opacity: $opacity;
+
+        @include mobile {
+          font-size: 40px;
+        }
     }
 
     &__icon {
@@ -29,12 +30,23 @@ $opacity: 0.7;
         float: left;
         padding-top: 30px;
 
-        > .wi {
-            width: 100%;
-            text-align: center;
-            font-size: 115px;
-            margin: 20px 0;
+        @include mobile {
+          width: 100%;
+          clear: left;
         }
+
+        > .wi {
+          width: 100%;
+          text-align: center;
+          font-size: 115px;
+          margin: 20px 0;
+
+          @include mobile {
+            font-size: 250px;
+            margin: 40px 0;
+          }
+        }
+
 
         &-label {
             width: 100%;
@@ -45,6 +57,10 @@ $opacity: 0.7;
             @include tablet {
                 font-size: 20px;
             }
+
+            @include mobile {
+              font-size: 40px;
+            }
         }
 
     }
@@ -53,13 +69,25 @@ $opacity: 0.7;
         width: 50%;
         float: left;
 
+
+        @include mobile {
+          width: 100%;
+          clear: left;
+          margin: 60px 0 0 0;
+        }
+
         sup{
             font-size: 0.6em;
         }
+
         &-main{
             width: 100%;
             font-size: 122px;
             text-align: center;
+
+            @include mobile {
+              font-size: 240px;
+            }
         }
 
         &-min , &-max{
@@ -72,6 +100,27 @@ $opacity: 0.7;
             @include tablet {
                 font-size: 20px;
             }
+
+            @include mobile {
+              font-size: 40px;
+              line-height: 70px;
+              height: 70px;
+            }
+        }
+
+        &-min{
+          @include mobile {
+            text-align: right;
+            padding: 0 20px 0 0;
+            border-right: 2px solid $white-75;
+          }
+        }
+
+        &-max{
+          @include mobile {
+            text-align: left;
+            padding: 0 0 0 20px;
+          }
         }
     }
 
