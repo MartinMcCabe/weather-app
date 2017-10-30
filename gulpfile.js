@@ -57,8 +57,8 @@ function buildScript(file, watch) {
     return stream
       .on('error', handleErrors)
       .pipe(source(file))
-      // .pipe(buffer())
-      // .pipe(uglify())
+      .pipe(buffer())
+      .pipe(uglify())
       .pipe(gulp.dest('./js/'))
       .pipe(reload({stream:true}))
   }
@@ -106,3 +106,15 @@ gulp.task('default', ['sass', 'js', 'serve'], function(){
   gulp.watch(['./src/sass/**'], ['sass']);
   return buildScript('index.js', true);
 })
+
+/**
+ * set NODE_ENV to production
+ */
+gulp.task('apply-prod-environment', function(){
+  process.env.NODE_ENV = JSON.stringify('production');
+})
+
+/**
+ * BUILD Production
+ */
+gulp.task('build-production', ['apply-prod-environment', 'sass', 'js', 'serve']);
