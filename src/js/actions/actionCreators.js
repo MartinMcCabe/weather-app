@@ -63,7 +63,7 @@ export const getLocation = () => {
       dispatch(receiveLocation(position, true))
     }, () => {
       // user denied permission, try get next best thing
-      return fetch(`http://freegeoip.net/json/`)
+      return fetch(`${location.protocol}//freegeoip.net/json/`)
         .then(res => {
           if (res.status >= 400){
             dispatch(locationError(`There was a problem retrieving your current location, please try again later`))
@@ -73,7 +73,7 @@ export const getLocation = () => {
           }
           return res.json()
         },error => {
-          dispatch(fetchError(error.message))
+          dispatch(fetchError(`There was an error while trying to get your location, please try again later.`))
           var err = new Error(error.message)
           throw err
         })
@@ -86,6 +86,9 @@ export const getLocation = () => {
           }
           dispatch(receiveLocation(location, false))
         } )
+        .catch(e => {
+          console.error(e)
+        })
     });
   }
 }
@@ -119,8 +122,7 @@ export const getCurrentWeather = () => {
       longitude
     } = getState().location.coords;
     const api_key = `b490540acdcc293abddd7596dc3cbb70`
-    // const api_key = `53f9d8e4213222cf517d86dc406d67fc`
-    const api_call = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api_key}`
+    const api_call = `${location.protocol}//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api_key}`
 
     dispatch(isFetching(true))
 
@@ -140,6 +142,9 @@ export const getCurrentWeather = () => {
       })
       .then(json => {
         dispatch(receiveWeather(json))
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 }
