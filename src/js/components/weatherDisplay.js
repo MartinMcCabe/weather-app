@@ -3,7 +3,7 @@ import React from 'react'
 const WeatherDisplay = ({ weatherdata, icon, label }) =>{
 
   return (
-    <div className='content weather-display clearfix'>
+    <div className='content weather-display'>
       <h1 className='weather-display__name'>{ weatherdata.name }</h1>
       <h2 className='weather-display__time'>Now</h2>
       <div className='weather-display__icon'>
